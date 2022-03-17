@@ -3,7 +3,7 @@ import { user } from "../model/User";
 import { BaseDatabase } from "./BaseDatabase";
 
 export class UserDatabase extends BaseDatabase implements UserRepository {
-    protected TABLE_U = 'lama_users'
+    protected TABLE_U = 'festUsers'
 
     insert = async (user: user) => {
         try {
