@@ -3,7 +3,7 @@ import { Band, BandInputDTO } from "../../model/Band";
 import Authenticator from "../../services/Authenticator";
 import IdGenerator from "../../services/IdGenerator";
 
-export class BandBussiness {
+export class BandBusiness {
     constructor(
         private bandDatabase: BandDatabase
     ) { }
@@ -53,19 +53,26 @@ export class BandBussiness {
 
     getBandDetails = async (id: string, name: string, token: string) => {
         const getUserId = Authenticator.getTokenData(token)
+
         if (!getUserId) {
             throw new Error('Token inválido')
         }
 
         if (id) {
             const band = await this.bandDatabase.getBandDetails(id)
-            if(!band){throw new Error('Banda não encontrada')}
+
+            if(!band){
+                throw new Error('Banda não encontrada')
+            }
 
             return band
 
         } else if (name) {
             const band = await this.bandDatabase.getBandDetails(name)
-            if(!band){throw new Error('Banda não encontrada')}
+
+            if(!band){
+                throw new Error('Banda não encontrada')
+            }
 
             return band
         }
