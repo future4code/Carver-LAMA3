@@ -35,4 +35,21 @@ export class BandController {
         }
 
     }
+
+    getBandDetails = async (req:Request, res:Response) => {
+        const token = req.headers.authorization as string
+        const id = req.query.id as string
+        const name = req.query.name as string
+
+        try {
+
+            const band = await this.bandBussiness.getBandDetails(id, name, token)
+
+            res.status(200).send({result: band})
+
+        } catch (error: any) {
+            if (error.message) return res.status(400).send(error.message)
+            res.status(400).send('Erro ao pegar detalhes de banda.')
+        }
+    }
 }

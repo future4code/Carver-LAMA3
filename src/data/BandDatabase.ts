@@ -51,4 +51,21 @@ export class BandDatabase extends BaseDatabase implements BandRepository {
             throw new Error(error.sqlMessage || error.message)
         }
     }
+
+    getBandDetails = async (query: string) => {
+        try {
+
+            const result = await BaseDatabase.connection(this.tableBandFest)
+            .select('*')
+            .where('id', query)
+            .orWhere('name', 'like', `%${query}%`)
+
+            return result[0]
+            
+        } catch (error: any) {
+            throw new Error(error.sqlMessage || error.message)
+        }
+    }
+
+
 }
