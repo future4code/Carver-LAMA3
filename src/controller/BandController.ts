@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
-import { BandBussiness } from "../business/Bands/BandBusiness";
+import { BandBusiness } from "../business/Bands/BandBusiness";
 import { BandInputDTO } from "../model/Band";
 
 export class BandController {
     constructor(
-        private bandBussiness:BandBussiness
+        private bandBussiness:BandBusiness
     ){}   
 
     insertNewBand = async (req:Request, res:Response) => {

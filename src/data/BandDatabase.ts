@@ -67,5 +67,4 @@ export class BandDatabase extends BaseDatabase implements BandRepository {
         }
     }
 
-
 }
