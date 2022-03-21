@@ -26,8 +26,8 @@ app.post('/users/login', userController.login)
 app.get('/band/detail', bandController.getBandDetails)
 app.post('/band/register', bandController.insertNewBand)
 
+app.get('/show/lineup', showController.findShowByWeekDay)
 app.post('/show/register', showController.insertBandShow)
-app.post('/show/lineup', showController.findShowByWeekDay)
 
 
 
