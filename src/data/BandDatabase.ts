@@ -38,15 +38,15 @@ export class BandDatabase extends BaseDatabase implements BandRepository {
     validateBandOnFest = async (name:string) => {
         try{
 
-            const infoByName = await BaseDatabase.connection(this.tableBandFest)
+            const infoByName :Band[] = await BaseDatabase.connection(this.tableBandFest)
             .select('*')
             .where({name})
 
-            if(infoByName){
-                return true
-            }
+            // if(infoByName){
+            //     return true
+            // }
 
-            return false
+            return infoByName[0]
         } catch (error: any) {
             throw new Error(error.sqlMessage || error.message)
         }

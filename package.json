@@ -7,7 +7,8 @@
     "dev": "ts-node-dev ./src/index.ts",
     "start": "node ./build/src/index.js",
     "build": "tsc",
-    "test": "clear && echo \"Running tests...\" && jest"
+    "test": "clear && echo \"Running tests...\" && jest",
+    "migrations": "tsc && node ./build/migrations.js"
   },
   "keywords": [],
   "author": "Pedro Henrique e Maria Fernanda",

@@ -28,7 +28,7 @@ export class ShowBusiness {
             throw new Error('Adicione valores válidos.')
         }
 
-        if(week_day != 'Sexta-feira' || 'Sábado' || 'Domingo'){
+        if(week_day !== "Sexta-feira" && week_day !== "Sábado" && week_day !== "Domingo"){
             throw new Error('Adicione dias válidos.')
         }
 
