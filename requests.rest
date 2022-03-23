@@ -1,0 +1,25 @@
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+    "name": "Maria Fernanda",
+    "email": "mariafernanda@labenu.com",
+    "password": "batata1234",
+    "role": "ADMIN"
+}
+
+### 
+
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "mariafernanda@labenu.com",
+    "password": "batata1234"
+}
+
+### 
+
+GET http://localhost:3003/band/detail?name=alien
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIzMmJhZGY2LTIzNDctNGFlZS1hNWIzLWNjOGI1NzViMGI3MyIsImlhdCI6MTY0NzU4Mzg4NiwiZXhwIjoxNjQ3NjcwMjg2fQ.Hfy83fFmeEYChS9XROxTGnBjBeEzmou4BNKSx5UMEvo
+
